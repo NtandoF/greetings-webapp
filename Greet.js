@@ -26,9 +26,11 @@ module.exports = function (pool){
     if (language === 'English') {
     return message = 'Hello, ' + name;
     }
+
     if(language === 'Afrikaans'){
     return message = 'Goeie Dag, ' + name;
     }
+    
     if (language === 'IsiXhosa') {
     return message = 'Molo, ' + name;
     }
@@ -48,18 +50,16 @@ module.exports = function (pool){
   //   return mapNames
   // }
 
-  // function reset(name){
-  //   mapNames = {};
-  //   person = '';
-  //   name = '';
-  //   greetingDone = 0;
-  // }
+  async function reset(){
+  let remove = await pool.query('delete from users');
+  return remove;
+  }
 
   return {
     greetingFunction,
-    greetCounter
+    greetCounter,
     // nameMap,
-    // reset,
+     reset,
     // insertGreeting
   }
 }

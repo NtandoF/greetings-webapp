@@ -46,9 +46,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
+app.get('/', async function (req, res) {
+    let counter = await pool.query('select count( name ) from users;');
+    counter = counter.rows[0].count;
 
-app.get('/', async function (req, res, ) {
-    res.render('home');
+    res.render('home', {
+      counter
+    });
 });
 
 app.post('/greetings', async function (req, res, next) {
@@ -63,12 +67,12 @@ app.post('/greetings', async function (req, res, next) {
         }
         
         let greeting = {
-            message: await greet.greetingFunction(text, language)
+            message: await greet.greetingFunction(text, language),
+            count: await greet.greetCounter()
         }
-        
 
         res.render('home',
-            {greeting});
+             {greeting});
 
     } catch (error) {
         next(error)
@@ -88,7 +92,7 @@ app.post('/reset', function (req, res) {
     res.redirect('/');
 })
 
-let PORT = process.env.PORT || 3078;
+let PORT = process.env.PORT || 3072;
 
 app.listen(PORT, function () {
     console.log('App running on port', PORT);
