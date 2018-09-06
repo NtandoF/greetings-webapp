@@ -1,0 +1,56 @@
+<h3>
+    Greetings Page</h3>
+
+
+<form action="/greetings" method="POST">
+
+    <h3> Name :</h3>
+
+    <input type="text" name="greetTextArea" placeholder="Please insert a name" class="Input">
+
+    <div id="displayCount"> <strong>Counter : {{counter}}</strong>
+        <span class=""> <span class="greetCount"></span> </span>
+
+
+        <div class="entry">
+            <h1> {{messages.info}}</h1>
+        </div>
+        <div class="displayField">
+    <span>{{greeting.message}}</span>
+    </div>
+
+<a href="/actions">People Greeted</a>
+
+        <div class="Languages">
+            <label class="">
+                <input type="radio" required='required' name="languageSelector" class="languageRadio" value="English"></input>
+                <span class="label-body">English</span>
+            </label>
+
+
+            <input type="radio" required='required' name="languageSelector" class="languageRadio" value="Afrikaans"></input>
+            <span class="label-body">Afrikaans</span>
+
+
+
+            <label class="">
+                <input type="radio" required='required' name="languageSelector" class="languageRadio" value="IsiXhosa"></input>
+                <span class="label-body">IsiXhosa</span>
+            </label>
+
+
+
+            <button class="button-primary greetBtn" type="submit" name="button">Greet</button>
+
+            <br>
+</form>
+
+
+
+
+<form action="/reset" method="POST">
+    <div class="reset">
+        <button class="button-primary resetBtn" type="submit" name="resetButton">Reset</button>
+    </div>
+    </div>
+</form>

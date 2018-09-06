@@ -1,0 +1,22 @@
+<h1>People Greeted</h1>
+
+<table>
+    <tr>
+        <th>
+            Names Greeted 
+        </th>
+        <th>
+            Counter
+        </th>
+    </tr>
+    {{#each usersGreeted}}
+    <tr>
+        <td>
+           {{name}} 
+        </td>
+        <td>
+        Has been greeted {{count}}
+        </td>
+    </tr>
+    {{/each}}
+</table>

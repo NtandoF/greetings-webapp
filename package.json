@@ -1,0 +1,37 @@
+{
+  "name": "greetings-webgapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "eslint": "^5.4.0",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.2",
+    "pg": "^7.4.3",
+    "save": "^2.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NtandoF/GREETINGS-WEBAPP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NtandoF/GREETINGS-WEBAPP/issues"
+  },
+  "homepage": "https://github.com/NtandoF/GREETINGS-WEBAPP#readme"
+}
