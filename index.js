@@ -58,18 +58,21 @@ app.get('/', async function (req, res) {
 app.post('/greetings', async function (req, res, next) {
     try {
 
-        let text = req.body.greetTextArea;
+        let name = req.body.greetTextArea;
         let language = req.body.languageSelector;
-       
-        if (text === '' && language === undefined) {
-            req.flash('info');
-
-        }
+        
+                if (name === ''|| name === undefined) {
+                    req.flash('info','Please enter a name');
+                }
+                else if (language === undefined) {
+                    req.flash('info','Please select a language');
+                }
         
         let greeting = {
-            message: await greet.greetingFunction(text, language),
+            message: await greet.greetingFunction(name, language),
             count: await greet.greetCounter()
         }
+        
 
         res.render('home',
              {greeting});
@@ -92,7 +95,7 @@ app.post('/reset', function (req, res) {
     res.redirect('/');
 })
 
-let PORT = process.env.PORT || 3072;
+let PORT = process.env.PORT || 3080;
 
 app.listen(PORT, function () {
     console.log('App running on port', PORT);

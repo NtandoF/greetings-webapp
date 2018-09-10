@@ -11,7 +11,8 @@ module.exports = function (pool){
   // }
 
   async function greetingFunction(name, language){
-  
+  if (name !== '' && language !== undefined){
+
   let getUsers = await pool.query('select * from users where name =$1', [name]);
  
 
@@ -19,7 +20,6 @@ module.exports = function (pool){
       let resp = await pool.query('insert into users (name, count) values ($1, $2)', [name, 0]);
       console.log(resp);
     }
-
       await pool.query('update users set count =(count +1) where name =$1', [name])
 
   
@@ -34,8 +34,8 @@ module.exports = function (pool){
     if (language === 'IsiXhosa') {
     return message = 'Molo, ' + name;
     }
-   
   }
+ }
 
 
 

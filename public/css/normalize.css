@@ -6,32 +6,89 @@
  *    user zoom.
  */
 
- .displayField {
+{
+  box-sizing: border-box;
+}
+
+body {
+
+  padding: 20px;
+  margin: 0;
+
+}
+.input{
+color:inherit;
+
+}
+.h1{
+color: inherit;
+font-style: oblique;
+font-size: 20px;
+}
+
+.container {
+  position: left;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: left;
   font-size: 25px;
-  text-align: center;
-  
+  padding: 30px;
 }
 
-#counter {
-  text-align: center;
-  text-decoration: underline;
-  padding-top: -20px;
+@media screen and (max-width: 600px) {
+
 }
 
-.Input{
-  margin-left: 450px ;
+/* .greetMeBtn {button
+display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #4CAF50;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+.greetMeBtn:hover {background-color: #3e8e41}
+
+.greetMeBtn:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }
 
-.greetButtons {
-  float: left;
-  margin-left: 15cm ;
+.Reset {button */
+  /* display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999; */
 }
+/* .Reset:hover {background-color: #3e8e41} */
 
-.Languages {
-  padding-right: -110px;
+/* .Reset:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+} */
+
+
+.displayField{
+color: green;
 }
-
-#displayCount {
-  text-align: center;
-  font-size: 25px;
+.entry{
+color: red;
+}
+.entryThree{
+color: blue;
 }
