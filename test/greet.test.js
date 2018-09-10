@@ -31,10 +31,10 @@ describe('Greetings languages', function () {
     var greeter = GreetingFactory(pool)
     let greet = await greeter.greetingFunction('BlessMess', 'IsiXhosa')
     assert.equal(greet, 'Molo, BlessMess');
-  });
+  }); 
   it('Greetings should return undefined when the name is undefined', async function () {
     var greeter = GreetingFactory(pool);
-    let unknown = await greeter.greetingFunction("English", '')
+    let unknown = await greeter.greetingFunction("English", 'ludwe')
     assert.equal(unknown , undefined);
   });
 

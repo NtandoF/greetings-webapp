@@ -95,7 +95,13 @@ app.post('/reset', function (req, res) {
     res.redirect('/');
 })
 
-let PORT = process.env.PORT || 3080;
+app.post('/home', function (req, res) {
+   
+
+    res.redirect('/home');
+})
+
+let PORT = process.env.PORT || 3070;
 
 app.listen(PORT, function () {
     console.log('App running on port', PORT);
