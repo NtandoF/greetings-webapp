@@ -1,10 +1,11 @@
 {
-  "name": "greetings-webgapp",
+  "name": "greetings-webapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
