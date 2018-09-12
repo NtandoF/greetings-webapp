@@ -101,7 +101,7 @@ app.post('/home', function (req, res) {
     res.redirect('/home');
 })
 
-let PORT = process.env.PORT || 30701;
+let PORT = process.env.PORT || 3071;
 
 app.listen(PORT, function () {
     console.log('App running on port', PORT);
