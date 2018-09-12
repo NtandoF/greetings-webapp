@@ -45,7 +45,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
 app.get('/', async function (req, res) {
     let counter = await pool.query('select count( name ) from users;');
     counter = counter.rows[0].count;
@@ -73,14 +72,12 @@ app.post('/greetings', async function (req, res, next) {
             count: await greet.greetCounter()
         }
         
-
         res.render('home',
              {greeting});
 
     } catch (error) {
         next(error)
     }
-
 
 });
 
@@ -97,7 +94,6 @@ app.post('/reset', function (req, res) {
 
 app.post('/home', function (req, res) {
    
-
     res.redirect('/home');
 })
 
