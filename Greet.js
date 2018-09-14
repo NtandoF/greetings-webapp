@@ -29,7 +29,7 @@ module.exports = function (pool) {
         return message = 'Molo, ' + name;
       }
     }
-    
+
   }
 
 
@@ -45,10 +45,15 @@ module.exports = function (pool) {
     let remove = await pool.query('delete from users');
     return remove;
   }
+  async function ReadUser (name) {
+    let result = await pool.query('select * from users where name=$1', [name])
+    return result.rows
+  }
 
   return {
     greetingFunction,
     greetCounter,
+    ReadUser,
     reset
   }
 }

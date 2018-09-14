@@ -48,8 +48,12 @@ app.use(bodyParser.json())
 app.get('/', async function (req, res) {
     let counter = await pool.query('select count( name ) from users;');
     counter = counter.rows[0].count;
+    let greeting = {
+        count: await greet.greetCounter()
+    }
 
     res.render('home', {
+        greeting,
       counter
     });
 });
@@ -86,6 +90,19 @@ app.get('/actions', async function (req, res) {
     let usersGreeted = outcome.rows;
     res.render('actions', { usersGreeted });
 })
+
+app.get('/users/:name', async function (req, res) {
+    try {
+      let username = req.params.name
+      let results = await greet.ReadUser(username)
+      res.render('namesGreeted', {
+        time: results
+      })
+    } catch (err) {
+      res.send(err.stack)
+    }
+  })
+
 
 app.post('/reset', function (req, res) {
     greet.reset();
