@@ -15,7 +15,7 @@ if (process.env.DATABASE_URL && !local) {
     useSSL = true;
 }
 // which db connection to use
-const connectionString = process.env.DATABASE_URL || 'postgresql://postgres@localhost:5432/greetedNames';
+const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/greetedNames';
 
 const pool = new Pool({
     connectionString,
@@ -59,18 +59,18 @@ app.post('/greetings', async function (req, res, next) {
 
         let name = req.body.greetTextArea;
         let language = req.body.languageSelector;
-        
-                if (name === ''|| name === undefined) {
-                    req.flash('info','Please enter a name');
-                }
-                else if (language === undefined) {
-                    req.flash('info','Please select a language');
-                }
-        
+
         let greeting = {
             message: await greet.greetingFunction(name, language),
             count: await greet.greetCounter()
         }
+        
+                if (name === ''|| name === undefined) {
+                    req.flash('info','Please enter a name');
+                }
+                // else if (language === undefined) {
+                //     req.flash('info','Please select a language');
+                // }
         
         res.render('home',
              {greeting});
@@ -92,12 +92,12 @@ app.post('/reset', function (req, res) {
     res.redirect('/');
 })
 
-app.post('/home', function (req, res) {
+app.get('/home', function (req, res) {
    
-    res.redirect('/home');
+    res.redirect('/');
 })
 
-let PORT = process.env.PORT || 3071;
+let PORT = process.env.PORT || 30781;
 
 app.listen(PORT, function () {
     console.log('App running on port', PORT);

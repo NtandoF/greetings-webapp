@@ -3,10 +3,12 @@ module.exports = function (pool) {
   var message = '';
 
   async function greetingFunction(name, language) {
-    if (name !== '' && language !== undefined) {
+
+    if (name && name !== '' && language !== undefined) {
+      
+      name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
       let getUsers = await pool.query('select * from users where name =$1', [name]);
-
 
       if (getUsers.rowCount === 0) {
         let resp = await pool.query('insert into users (name, language, count) values ($1, $2 , $3)', [name, language, 0]);
@@ -27,6 +29,7 @@ module.exports = function (pool) {
         return message = 'Molo, ' + name;
       }
     }
+    
   }
 
 
