@@ -3,27 +3,32 @@
 <head>
   <meta charset="utf8">
   <title></title>
-  <link rel="stylesheet" href="/skeleton.css">
-  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="/skeleton.css" type="text">
+  <link rel="stylesheet" href="/normalize.css" type="text">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
+  
   <div class="container">
-    <h1>Greetings Page</h1>
+    <div class="heading">
+    <h1 style="font-size:50px;">Greetings Page</h1>
+    </div>
     <br>
     <form action="/greetings" method="POST">
 
 
       <div class="twelve columns">
     <div class="row">
-    <b>Name:</b> <input style="margin-right:50%" type="text" name="greetTextArea" placeholder="Please insert a name" class="Input">
-      </div>
+      <div class="textarea">
+    <b>Please insert a name below:</b> <input style="margin-right:50%" type="text" name="greetTextArea" class="Input">
     </div>
-
-  <span class=""> <span class="greetCount"></span> </span>
-  <div class="row" id="input"></div><strong>Counter : {{greeting.count}}</strong>
+    <br>
+    
+    <div id="counter">
+  <span class="greetCount"></span>
+  <strong>{{greeting.count}} user(s) have been greeted</strong>
+  </div>
   <br>
   <div class="entry">
     <h2> {{messages.info}}</h2>
@@ -31,44 +36,47 @@
   <div class="displayField">
     <span>{{greeting.message}}</span>
   </div>
+  </div>
+  </div>
 
   <div class="row" id="language">
     <div class="twelve columns">
 
-      <label class="">
+      <label class="languageRadio">
         <input type="radio" required='required' name="languageSelector" class="languageRadio" value="English"></input>
         <span class="label-body">English</span>
       </label>
-      <label class="">
+      <label class="languageRadio">
         <input type="radio" required='required' name="languageSelector" class="languageRadio" value="Afrikaans"></input>
         <span class="label-body">Afrikaans</span>
       </label>
-      <label class="">
+      <label class="languageRadio">
         <input type="radio" required='required' name="languageSelector" class="languageRadio" value="IsiXhosa"></input>
         <span class="label-body">IsiXhosa</span>
       </label>
 
-
+    </div>
     </div>
   </div>
 
   <br>
 
-  <div class="row" id="greetMeBtn">
-
-    <div class="two columns">
+  <div class="row">
+   <div class="five columns">
       <button class="button-primary greetBtn" type="submit" name="button">Greet</button>
     </div>
     <div class="three columns">
-      <a href="/actions">People Greeted</a>
+      <a class="GreetedNames" href="/actions">People Greeted</a>
     </div>
     </form>
-    <div class="one columns">
+    <div class="three columns">
       <form action="/reset" method="POST">
         <div class="reset">
           <button class="button-primary resetBtn" type="submit" name="resetButton">Reset</button>
         </div>
+       </form>
     </div>
-    </form>
   </div>
   </div>
+</body>
+  </html>

@@ -6,20 +6,53 @@
  *    user zoom.
  */
 
-{
-  box-sizing: border-box;
+  /* body {
+    background-image: url("images/Fotolia_101425498_Subscription_Monthly_XXL.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
+    background-attachment: fixed;
+  } */
+
+
+.heading{
+  text-align: center;
+  background-color: wheat;
+  height: 155px;
+ }
+ .heading1{
+  text-align: center;
+  background-color: wheat;
+  height: 800px;
+  background-attachment: scroll;
+ }
+.textarea{
+  margin-left: 300px;
+}
+#counter{
+  margin-left: 300px
+}
+.languageRadio{
+  margin-left: 150px;
+}
+.greetBtn{
+  margin-left: 80px;
+}
+/* .GreetedNames{
+  margin-left: 250px;
+} */
+.resetBtn{
+  margin-left: 100px;
+}
+.entry{
+  color: red;
+  margin-left: 340px;
+  }
+.displayField{
+  margin-left: 400px;
 }
 
-body {
 
-  padding: 20px;
-  margin: 0;
-
-}
-.input{
-color:inherit;
-margin-right: 50px;
-}
 .h1{
 color: inherit;
 font-style: oblique;
@@ -36,59 +69,40 @@ font-size: 20px;
   padding: 30px;
 }
 
-@media screen and (max-width: 600px) {
-
+#example1 {
+  background-image: url(Fotolia_101425498_Subscription_Monthly_XXL.jpg);
+  background-position: right bottom;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
 }
 
-/* .greetMeBtn {button
-display: inline-block;
-padding: 15px 25px;
-font-size: 24px;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-outline: none;
-color: #fff;
-background-color: #4CAF50;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999;
+@media screen and (max-width: 350px) {
+  .textarea{
+    margin-left: 0px;
+    text-align: center;
+  }
+  #counter{
+    margin-left: 11px;
+    text-align: center;
+  }
+  .languageRadio{
+    margin-left: 25px;
+  }
+  .greetBtn{
+    margin-left: 80px;
+  }
+  .GreetedNames{
+    margin-left: 55px;
+  }
+  .resetBtn{
+    margin-left: 80px;
+  }
+  .entry{
+    color: red;
+    margin-left: 34px;
+    }
+  .displayField{
+    margin-left: 80px;
+  }
 }
-.greetMeBtn:hover {background-color: #3e8e41}
 
-.greetMeBtn:active {
-background-color: #3e8e41;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
-}
-
-.Reset {button */
-  /* display: inline-block;
-padding: 15px 25px;
-font-size: 24px;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-outline: none;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999; */
-}
-/* .Reset:hover {background-color: #3e8e41} */
-
-/* .Reset:active {
-background-color: #3e8e41;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
-} */
-
-
-.displayField{
-color: green;
-}
-.entry{
-color: red;
-}
-.entryThree{
-color: blue;
-}
