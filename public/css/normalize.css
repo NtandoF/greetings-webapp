@@ -13,7 +13,10 @@
     margin-right: 200px;
     background-attachment: fixed;
   } */
-
+  .textarea1{
+   margin-right: 12px;
+    text-align: center;
+  }
 
 .heading{
   text-align: center;
@@ -96,6 +99,46 @@ font-size: 20px;
   }
   .resetBtn{
     margin-left: 80px;
+  }
+  .entry{
+    color: red;
+    margin-left: 34px;
+    }
+  .displayField{
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .heading{
+    text-align: center;
+    background-color: wheat;
+    height: 155px;
+    margin-left: 80px;
+   }
+  .textarea{
+    margin-left: 35px;
+    text-align: center;
+  }
+  .textarea1{
+    margin-left: 80px;
+    text-align: center;
+  }
+  #counter{
+    margin-left: 60px;
+    text-align: center;
+  }
+  .languageRadio{
+    margin-left: 50px;
+  }
+  .greetBtn{
+    margin-left: 150px;
+  }
+  .GreetedNames{
+    margin-left: 122px;
+  }
+  .resetBtn{
+    margin-left: 150px;
   }
   .entry{
     color: red;
