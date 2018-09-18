@@ -29,8 +29,8 @@ describe('Greetings languages', function () {
 
   it('should greet BlessMess in isixhosa', async function () {
     var greeter = GreetingFactory(pool)
-    let greet = await greeter.greetingFunction('BlessMess', 'IsiXhosa')
-    assert.equal(greet, 'Molo, BlessMess');
+    let greet = await greeter.greetingFunction('Blessmess', 'IsiXhosa')
+    assert.equal(greet, 'Molo, Blessmess');
   }); 
   it('Greetings should return undefined when the name is undefined', async function () {
     var greeter = GreetingFactory(pool);
@@ -38,24 +38,7 @@ describe('Greetings languages', function () {
     assert.equal(unknown , undefined);
   });
 
-  //  it('should return the correct number of people greeted even if greeted more then once', async function () {
-  //    var greeter = GreetingFactory(pool)
-  //   let count = await greeter.greetCounter('Ntando')
-  //  greeter.greetingFunction('Ntando', 'English')
-  //  greeter.greetingFunction('Ntando', 'English')
-  //  greeter.greetingFunction('Ntando', 'English')
-  //    assert.equal(count, 1);
-  //  });
-
-  //  it('should return the correct number of different people greeted', async function () {
-  //    var greeter = GreetingFactory(pool)
-  //    let count = await greeter.greetCounter('Yawa')
-  //    greeter.greetingFunction('Yawa', 'English')
-  //    greeter.greetingFunction('Yawa', 'English')
-  //    greeter.greetingFunction('Ntando', 'English')
-  //    greeter.greetingFunction('Ziyanda', 'English')
-  //    assert.equal(count, 2);
-  //  });
+  
 after (async function () {
   await pool.end();
 });

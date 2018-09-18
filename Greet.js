@@ -12,7 +12,6 @@ module.exports = function (pool) {
 
       if (getUsers.rowCount === 0) {
         let resp = await pool.query('insert into users (name, language, count) values ($1, $2 , $3)', [name, language, 0]);
-        console.log(resp);
       }
       await pool.query('update users set count =(count +1), language=$2 where name =$1', [name, language])
 
